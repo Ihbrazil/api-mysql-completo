@@ -1,7 +1,8 @@
 {
-  "name": "api-mysql",
+  "name": "api-mysql-de-colecao-de-dados",
   "type": "module",
   "version": "1.0.0",
+  "description": "API que faz conexão com banco de dados MySQL, mas retorna uma coleção de dados de 3 anos apenas de campeonatos no json como forma de transição para depois substituir por registro da tabela SQL",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +13,5 @@
   "dependencies": {
     "express": "^4.21.0",
     "mysql2": "^3.11.2"
-  },
-  "description": ""
+  }
 }
