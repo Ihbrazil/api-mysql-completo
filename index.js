@@ -3,8 +3,8 @@ import { retornaCampeonatos } from './servico/retornaCampeonatosServico.js';
 
 const app = express();
 
-app.get('/campeonatos', (req, res) => {
-    const campeonatos = retornaCampeonatos();
+app.get('/campeonatos', async (req, res) => {
+    const campeonatos = await retornaCampeonatos();
     
     res.json(campeonatos);
 });
