@@ -1,8 +1,8 @@
 {
-  "name": "api-mysql-campeonatos-busca-por-id",
+  "name": "api-mysql-campeonatos-erro-404-id",
   "type": "module",
   "version": "1.0.0",
-  "description": "API que faz conexão com banco de dados MySQL e retorna um registro da tabela libertadoresdb buscando por id",
+  "description": "API que faz conexão com banco de dados MySQL e retorna um registro da tabela libertadoresdb buscando por id e faz o tratamento 404 no endpoint campeonatos/:id",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

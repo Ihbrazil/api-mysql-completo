@@ -14,7 +14,11 @@ app.get('/campeonatos/:id', async (req, res) => {
 
     const campeonato = await retornaCampeonatosID(id);
 
-    res.json(campeonato);
+    if (campeonato.length > 0) {
+        res.json(campeonato);
+    } else {
+        res.status(404).json({mensagem: "Nenhum campeonato encontrado"});
+    }
 });
 
 app.listen(9000, async () => {
