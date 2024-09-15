@@ -1,8 +1,8 @@
 {
-  "name": "api-mysql-campeonatos",
+  "name": "api-mysql-campeonatos-busca-por-id",
   "type": "module",
   "version": "1.0.0",
-  "description": "API que faz conexão com banco de dados MySQL e retorna os registros da tabela libertadoresdb",
+  "description": "API que faz conexão com banco de dados MySQL e retorna um registro da tabela libertadoresdb buscando por id",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
