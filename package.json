@@ -1,8 +1,8 @@
 {
-  "name": "api-mysql-campeonatos-busca-time",
+  "name": "api-mysql-campeonatos-refatorando-codigo",
   "type": "module",
   "version": "1.0.0",
-  "description": "API que faz conexão com banco de dados MySQL e retorna um registro da tabela libertadoresdb buscando por id, faz o tratamento 404 no endpoint campeonatos/:id, busca campeonatos pelo ano: O objetivo desta aula é implementar o filtro por ano ao endpoint campeonatos. A ideia é que ao informar um ano (por exemplo 2002), o campeonato corresponde ao ano informado seja listado pela API. Agora, também, o acréscimo da busca por time: A ideia é que ao informar o nome de um time (por exemplo, Boca Juniors), todos os campeonatos vencidos pelo time sejam listados.",
+  "description": "API que faz conexão com banco de dados MySQL e retorna um registro da tabela libertadoresdb buscando por id, faz o tratamento 404 no endpoint campeonatos/:id, busca campeonatos pelo ano: O objetivo desta aula é implementar o filtro por ano ao endpoint campeonatos. A ideia é que ao informar um ano (por exemplo 2002), o campeonato corresponde ao ano informado seja listado pela API. Agora, também, o acréscimo da busca por time: A ideia é que ao informar o nome de um time (por exemplo, Boca Juniors), todos os campeonatos vencidos pelo time sejam listados.Por último a refatoração do código da API de campeonatos",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

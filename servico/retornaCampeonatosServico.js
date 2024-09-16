@@ -1,11 +1,21 @@
 import pool from "./conexao.js";
 
+async function executaQuery(conexao, query) {
+
+    const resultado_query = await conexao.query(query);
+
+    const resposta = resultado_query[0];
+
+    return resposta;
+}
+
 export async function retornaCampeonatos() {
+    
     const conexao = await pool.getConnection();
 
-    const campeonatos_tb = await conexao.query('SELECT id, campeao, vice, ano FROM campeonatos');
+    const query = 'SELECT id, campeao, vice, ano FROM campeonatos';
 
-    const campeonatos = campeonatos_tb[0];
+    const campeonatos = executaQuery(conexao, query);
 
     conexao.release();
 
@@ -15,9 +25,9 @@ export async function retornaCampeonatos() {
 export async function retornaCampeonatosID(id) {
     const conexao = await pool.getConnection();
 
-    const campeonatos_tb = await conexao.query('SELECT id, campeao, vice, ano FROM campeonatos WHERE id = '+id);
+    const query = 'SELECT id, campeao, vice, ano FROM campeonatos WHERE id = '+id;
 
-    const campeonatos = campeonatos_tb[0];
+    const campeonatos = executaQuery(conexao, query);
 
     conexao.release();
 
@@ -27,9 +37,9 @@ export async function retornaCampeonatosID(id) {
 export async function retornaCampeonatosAno(ano) {
     const conexao = await pool.getConnection();
 
-    const campeonatos_tb = await conexao.query('SELECT id, campeao, vice, ano FROM campeonatos WHERE ano = '+ano);
+    const query = 'SELECT id, campeao, vice, ano FROM campeonatos WHERE ano = '+ano;
 
-    const campeonatos = campeonatos_tb[0];
+    const campeonatos = executaQuery(conexao, query);
 
     conexao.release();
 
@@ -39,9 +49,9 @@ export async function retornaCampeonatosAno(ano) {
 export async function retornaCampeonatosTime(time) {
     const conexao = await pool.getConnection();
 
-    const campeonatos_tb = await conexao.query('SELECT id, campeao, vice, ano FROM campeonatos WHERE campeao = "'+time+'"');
+    const query = 'SELECT id, campeao, vice, ano FROM campeonatos WHERE campeao = "'+time+'"';
 
-    const campeonatos = campeonatos_tb[0];
+    const campeonatos = executaQuery(conexao, query);
 
     conexao.release();
 
