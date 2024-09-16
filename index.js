@@ -1,5 +1,5 @@
 import express from 'express';
-import { retornaCampeonatos, retornaCampeonatosAno, retornaCampeonatosID } from './servico/retornaCampeonatosServico.js';
+import { retornaCampeonatos, retornaCampeonatosAno, retornaCampeonatosTime, retornaCampeonatosID } from './servico/retornaCampeonatosServico.js';
 
 const app = express();
 
@@ -7,11 +7,17 @@ app.get('/campeonatos', async (req, res) => {
     let campeonatos;
 
     const ano = req.query.ano;
+    const time = req.query.time;
 
-    if (typeof ano === "undefined") {
+
+    if (typeof ano === "undefined" && typeof time === "undefined") {
         campeonatos = await retornaCampeonatos();
-    } else {
+    }
+    else if (typeof ano !== "undefined") {
         campeonatos = await retornaCampeonatosAno(parseInt(ano));
+    }
+    else if (typeof time !== "undefined") {
+        campeonatos = await retornaCampeonatosTime(time);
     }
 
     if (campeonatos.length > 0) {
